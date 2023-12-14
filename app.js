@@ -7,6 +7,7 @@ require('dotenv').config()
 const bodyParser = require('body-parser')
 
 const BlogsRouter = require('./api/routes/blogs')
+const UsersRouter = require('./api/routes/users')
 
 mongoose.connect(
   'mongodb+srv://vinjwacr7:' +
@@ -37,6 +38,7 @@ app.use((res, req, next) => {
 app.use(morgan('tiny'))
 
 app.use('/blogs', BlogsRouter)
+app.use('/users', UsersRouter)
 
 app.use('', (req, res, next) => {
   const err = new Error('Not found')

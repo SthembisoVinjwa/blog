@@ -7,7 +7,8 @@ const blogSchema = Schema({
   snippet: { type: String, required: true },
   content: { type: String, required: true },
   category: { type: String, required: true },
-  likes: { type: Number }
+  likes: { type: Number, default: 0},
+  author: { type:  Schema.Types.ObjectId, ref: "User", required: true}
 })
 
 const blog = mongoose.model('Blog', blogSchema)
