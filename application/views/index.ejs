@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="../public/styles.css" />
     <title>Blog</title>
 </head>
 
@@ -20,14 +20,72 @@
     </header>
     <main>
         <section class="corousel">
-            <h2>Recent blogs</h2>
-            <p>Heieewrwowube</p>
+            <div class="heading">
+                <h2 id="title"><i>Recent blogs:</i></h2>
+            </div>
+            <div class="slide-container">
+                <div class="slides">
+                    <div class="slide">
+                        <h3 class="topic">This blog is about this and that</h3>
+                        <img src="./drone_1.jpg" alt="image not supported" class="img-tpc">
+                        <p class="news">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, consequuntur reiciendis aperiam porro a eius tenetur atque reprehenderit quibusdam laborum, repellendus iusto molestias aut similique assumenda quidem? Officia, libero voluptatem? 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, adipisci? Sit dolorem tempora sint eius, voluptate odio, architecto repellendus, molestias officiis expedita reiciendis. Quam saepe corrupti quia? Molestias, deserunt commodi!
+                        </p>
+                    </div>
+                    <div class="slide">
+                        <h3 class="topic">Today is Friday</h3>
+                        <img src="./drone_3.jpg" alt="image not supported" class="img-tpc">
+                        <p class="news">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, consequuntur reiciendis aperiam porro a eius tenetur atque reprehenderit quibusdam laborum, repellendus iusto molestias aut similique assumenda quidem? Officia, libero voluptatem? 
+                        </p>
+                    </div>
+                    <div class="slide">
+                        <h3 class="topic">Xmas next week</h3>
+                        <img src="./drone_1.jpg" alt="image not supported" class="img-tpc">
+                        <p class="news">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, consequuntur reiciendis aperiam porro a eius tenetur atque reprehenderit quibusdam laborum, repellendus iusto molestias aut similique assumenda quidem? Officia, libero voluptatem? 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, adipisci? Sit dolorem tempora sint eius, voluptate odio, architecto repellendus, molestias officiis expedita reiciendis. Quam saepe corrupti quia? Molestias, deserunt commodi!
+                        </p>
+                    </div>
+                    <div class="slide">
+                        <h3 class="topic">Ke december bos</h3>
+                        <img src="./drone_3.jpg" alt="image not supported" class="img-tpc">
+                        <p class="news">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, consequuntur reiciendis aperiam porro a eius tenetur atque reprehenderit quibusdam laborum, repellendus iusto molestias aut similique assumenda quidem? Officia, libero voluptatem? 
+                        </p>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="prev" onclick="prevSlide()">&#10094;</div>
+                    <div class="next" onclick="nextSlide()">&#10095;</div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
+    <!-- <footer>
         <p>Copyright &copy; Blog</p>
-    </footer>
+    </footer> -->
     
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const slideWidth = document.querySelector('.slide').offsetWidth;
+            slides.style.transform = `translateX(${-index * slideWidth}px)`;
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % document.querySelectorAll('.slide').length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + document.querySelectorAll('.slide').length) % document.querySelectorAll('.slide').length;
+            showSlide(currentSlide);
+        }
+
+        // Automatically advance to the next slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
 </body>
 
 </html>
