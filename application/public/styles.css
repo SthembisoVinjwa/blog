@@ -19,11 +19,10 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background-color: white;
+    background-color: #404040;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 1px grey;
 }
 
 footer {
@@ -41,7 +40,7 @@ footer {
 
 .logo {
     font-size: 32px;
-    color: black;
+    color: white;
     text-decoration: none;
     font-weight: 700;
 }
@@ -49,7 +48,7 @@ footer {
 nav a {
     position: relative;
     font-size: 18px;
-    color: black;
+    color: white;
     font-weight: 600;
     text-decoration: none;
     margin-left: 40px;
@@ -62,7 +61,7 @@ nav a::before {
     left: 0;
     width: 0;
     height: 3px;
-    background: black;
+    background: white;
     transition: .3s;
 }
 
@@ -75,15 +74,14 @@ nav a:hover::before {
 }
 
 .heading{
-    height: 50px;
+    height: 150px;
     display: flex;
-    margin: 20px;
 }
 
 #title{
     font-size: 32px;
     color: black;
-    margin: 0 auto;
+    margin: auto auto;
 }
 
 .slide-container{
