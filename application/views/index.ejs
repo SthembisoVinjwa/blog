@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css" />
-    <title>Blog</title>
-</head>
+<%- include('./partials/head.ejs') %>
 
 <body>
-    <header>
-        <a href="#" class="logo">Blog</a>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Topics</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+    <%- include('./partials/header.ejs') %>
     <main>
         <section class="corousel">
+            <div class="btn">
+                <div class="prev" onclick="prevSlide()">&#10094;</div>
+            </div>
             <div class="heading">
                 <h2 id="title">Recent blogs</h2>
             </div>
@@ -66,33 +56,10 @@
             </div>
         </section>
     </main>
-    <!-- <footer>
-        <p>Copyright &copy; Blog</p>
-    </footer> -->
+    
+    <%- include('./partials/footer.ejs') %>
 
-    <script>
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            const slides = document.querySelector('.slides');
-            const slideWidth = document.querySelector('.slide').offsetWidth;
-            slides.style.transform = `translateX(${-index * slideWidth}px)`;
-            currentSlide = index;
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % document.querySelectorAll('.slide').length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + document.querySelectorAll('.slide').length) % document.querySelectorAll('.slide').length;
-            showSlide(currentSlide);
-        }
-
-        // Automatically advance to the next slide every 3 seconds
-        setInterval(nextSlide, 3000);
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
