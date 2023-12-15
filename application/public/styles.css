@@ -33,22 +33,21 @@ footer {
     padding: 20px 100px;
     background-color: #404040;
     color: white;
-    display: flex;
+}
+
+#subscribe {
     align-items: center;
     justify-content: center;
 }
 
-#subscribe {
-    width: 100%;
+#info {
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
-.email {
-    display: block;
-}
-
-.subscribe {
-    background-color: red;
-    width: 100%;
+.email, .submit-btn {
+    display: inline-block;
 }
 
 .copyright {
