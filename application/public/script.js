@@ -21,3 +21,13 @@ function prevSlide () {
 
 // Automatically advance to the next slide every 3 seconds
 setInterval(nextSlide, 3000)
+
+// Navbar
+function dropdown () {
+  let btnMenu = document.getElementById('nav')
+  if (btnMenu.style.display == 'block') {
+    btnMenu.style.display = 'none'
+  } else {
+    btnMenu.style.display = 'block'
+  }
+}

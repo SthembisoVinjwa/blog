@@ -22,11 +22,12 @@ app.use(express.static('./application/public'))
 app.get('/', (req, res, next) => {
   axios.get('blogs')
   .then(response => {
-    console.log(response.data.blogs[0])
     res.render('index', {count: response.data.count, blogs: response.data.blogs})
   })
   .catch(err => {
-    console.log("ERR")
+    res.status(500).json({
+      message: err
+    })
   })
 
 })
