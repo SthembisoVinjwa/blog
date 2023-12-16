@@ -321,3 +321,18 @@ nav a:hover::before {
         margin-top: 200px;
     }
 }
+#music{
+    background-image: url(music.jpg);
+}
+#forex{
+    background-image: url(forex.jpg);
+}
+#health{
+    background-image: url(health.jpg);
+}
+#football{
+    background-image: url(soccer.jpg);
+}
+#politics{
+    background-image: url(politics.jpeg);
+}
