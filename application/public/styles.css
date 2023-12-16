@@ -30,14 +30,24 @@ footer {
     bottom: 0;
     width: 100%;
     min-height: 100px;
-    padding: 20px 100px;
+    padding: 15px 100px;
     background-color: #404040;
     color: white;
 }
 
 #subscribe {
+    display: block;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
+    width: 35%;
+    margin-bottom: 1em;
+}
+
+footer h2 {
+    margin: 0 auto;
+    width: 30%;
+    margin-bottom: 0.2em;
 }
 
 #info {
@@ -47,7 +57,26 @@ footer {
 }
 
 .email, .submit-btn {
-    display: inline-block;
+    display: inline;
+}
+
+.email {
+    width: 20em;
+    min-height: 2em;
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    border-radius: 0.3em;
+}
+
+.submit-btn {
+    min-height: 2.1em;
+    width: 7em;
+    border-radius: 0.3em;
+}
+
+.submit-btn:hover {
+    border-color: #c5aa6a;
 }
 
 .copyright {
