@@ -3,6 +3,7 @@ const Blog = require('../models/blogs')
 
 exports.blogs_get_all = (req, res, next) => {
   Blog.find()
+    .populate('author')
     .then(blogs => {
       res.status(200).json({
         count: blogs.length,
@@ -11,7 +12,9 @@ exports.blogs_get_all = (req, res, next) => {
             _id: blog._id,
             title: blog.title,
             snippet: blog.snippet,
-            category: blog.category
+            category: blog.category,
+            author: blog.author,
+            likes: blog.likes
           }
         })
       })

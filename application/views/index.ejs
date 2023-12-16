@@ -3,63 +3,48 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
-    <%- include('./partials/header.ejs') %>
-    <main>
-        <section class="corousel">
-            <div class="btn">
-                <div class="prev" onclick="prevSlide()">&#10094;</div>
-            </div>
-            <div class="heading">
-                <h2 id="title">Recent blogs</h2>
-            </div>
-            <div class="slide-container">
-                <div class="slides">
-                    <div class="slide">
-                        <img src="drone_3.jpg" class="img-tpc" alt="image not supported">
-                        <div class="blog-content">
-                            <h3 class="title">The Thrill of Victory</h3>
-                            <p class="snippet">
-                                Witness the exhilarating moments that define sportsmanship.
-                            </p>
-                            <p class="date-posted">
-                                Football - July, 20, 2023
-                            </p>
-                            <p class="blog-author">
-                                Themba Mnisi
-                                Mamelodi Sundowns fan
-                            </p>
+    <body>
+        <%- include('./partials/header.ejs') %>
+            <main>
+                <section class="corousel">
+                    <div class="btn">
+                        <div class="prev" onclick="prevSlide()">&#10094;</div>
+                    </div>
+                    <div class="heading">
+                        <h2 id="title">Recent blogs</h2>
+                    </div>
+                    <div class="slide-container">
+                        <div class="slides">
+                            <% for (let i = 0; i < count; i++) {%>
+                                <div class="slide">
+                                    <img src="drone_3.jpg" class="img-tpc" alt="image not supported">
+                                    <div class="blog-content">
+                                        <h3 class="title"><%- blogs[i].title %></h3>
+                                        <p class="snippet">
+                                            <%- blogs[i].snippet %>
+                                        </p>
+                                        <p class="date-posted">
+                                            <%- blogs[i].category %>
+                                        </p>
+                                        <p class="blog-author">
+                                            Author: <%- blogs[i].author.name %>
+                                        </p>
+                                    </div>
+                                </div>
+                            <% } %>    
                         </div>
                     </div>
-                    <div class="slide">
-                        <img src="drone_1.jpg" class="img-tpc" alt="image not supported">
-                        <div class="blog-content">
-                            <h3 class="title">The Thrill of Victory</h3>
-                            <p class="snippet">
-                                Witness the exhilarating moments that define sportsmanship.
-                            </p>
-                            <p class="date-posted">
-                                Football - July, 20, 2023
-                            </p>
-                            <p class="blog-author">
-                                Themba Mnisi
-                                Mamelodi Sundowns fan
-                            </p>
-                        </div>
+                    <div class="btn">
+                        <div class="prev" onclick="prevSlide()">&#10094;</div>
+                        <div class="next" onclick="nextSlide()">&#10095;</div>
                     </div>
-                </div>
-            </div>
-            <div class="btn">
-                <div class="prev" onclick="prevSlide()">&#10094;</div>
-                <div class="next" onclick="nextSlide()">&#10095;</div>
-            </div>
-            </div>
-        </section>
-    </main>
-    
-    <%- include('./partials/footer.ejs') %>
+                    </div>
+                </section>
+            </main>
 
-    <script src="script.js"></script>
-</body>
+            <%- include('./partials/footer.ejs') %>
+
+                <script src="script.js"></script>
+    </body>
 
 </html>
