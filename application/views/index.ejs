@@ -9,9 +9,12 @@
 </head>
 
 <body>
-    <header>
-        <a href="#" class="logo">Blog</a>
-        <nav>
+    <header id="head">
+        <div class="blog">
+            <a href="#" class="logo">Blog</a>
+            <button id="menu" onclick="dropdown()">menu</button>
+        </div>
+        <nav id="nav">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Topics</a>
@@ -92,6 +95,16 @@
 
         // Automatically advance to the next slide every 3 seconds
         setInterval(nextSlide, 3000);
+
+
+        function dropdown(){
+            let btnMenu = document.getElementById('nav')
+            if (btnMenu.style.display == 'block'){
+                btnMenu.style.display = 'none'
+            }else{
+                btnMenu.style.display = 'block'
+            }
+        }
     </script>
 </body>
 

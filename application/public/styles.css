@@ -25,6 +25,53 @@ header {
     align-items: center;
 }
 
+/* Navigation bar */
+nav{
+    display: inline;
+}
+#menu{
+    display: none;
+}
+@media(max-width: 710px){
+    #menu{
+        display: block;
+        width: 15%;
+        border-radius: 15%;
+        font-size: 20px;
+        font-family: Arial;
+    }
+    .blog{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        width: 100vw;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav{
+        display: none;
+        margin-top: 10px;
+    }
+    nav a {
+        display: block;
+        margin-bottom: 5px;
+    }
+    nav a:nth-child(1){
+        margin-top: 10px;
+    }
+    .logo{
+        padding: 5px;
+    }
+}
+
+/* ------------------------------------------ */
+
 footer {
     position: relative;
     bottom: 0;
