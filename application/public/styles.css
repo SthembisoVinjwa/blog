@@ -129,7 +129,7 @@ nav a:hover::before {
 }
 
 .heading{
-    height: 150px;
+    height: 120px;
     display: flex;
 }
 
