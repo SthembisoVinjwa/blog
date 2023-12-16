@@ -11,6 +11,8 @@ body {
 
 main {
     width: 100%;
+    height: auto; 
+    min-height: 700px;
 }
 
 header {
@@ -26,7 +28,8 @@ header {
 }
 
 footer {
-    position: absolute;
+    position: relative;
+    z-index: 10;
     bottom: 0;
     width: 100%;
     min-height: 100px;
@@ -41,7 +44,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 35%;
-    margin-bottom: 1em;
+    margin-bottom: 0.6em;
 }
 
 footer h2 {
