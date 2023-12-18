@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in/up</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Blog-X</h1>
+    </header>
+    <div class="container">
+        <div class="box-1">
+            <div class="content-holder">
+                <h2><i>Hello!</i></h2>
+                <button class="sign" onclick="inOrUp()">Sign In</button>
+            </div>
+        </div>
+        <div class="box-2">
+            <div class="login-form-container">
+                <div class="login-heading">
+
+                    <h1>Login Form</h1>
+                </div>
+                <div class="login-content">
+
+                    <fieldset>
+                        <label for="mail">
+                            
+                            <input type="email" placeholder="Email" class="input-field" id="mail">
+                        </label>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <label for="pass">
+                            <input type="password" placeholder="Password" class="input-field" id="pass">
+                        </label>
+                    </fieldset>
+                </div>
+                <button class="login-button" type="button">Login</button>
+            </div>
+            <div class="signup-form-container">
+                <div class="signin-heading">
+
+                    <h1>Sign Up Form</h1>
+                </div>
+                <div class="signin-content">
+
+                    <fieldset>
+                        <label for="name">
+                            <input type="text" placeholder="Username" class="input-field" id="name">
+                            
+                        </label>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <label for="mail">
+                            
+                            <input type="email" placeholder="Email" class="input-field" id="mail">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <label for="pass">
+                            <input type="password" placeholder="Password" class="input-field" id="pass">
+                            
+                        </label>
+                    </fieldset>
+                </div>
+
+                <button class="signup-button" type="button">Sign Up</button>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+</body>
+
+</html>
