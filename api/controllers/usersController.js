@@ -15,7 +15,8 @@ exports.users_signup = (req, res, next) => {
               _id: new mongoose.Types.ObjectId(),
               name: req.body.name,
               email: req.body.email,
-              password: hash
+              password: hash,
+              userAvatar: req.file.path
             })
             user
               .save()
@@ -118,7 +119,8 @@ exports.users_get_all = (req, res, next) => {
         users: users.map(user => {
           return {
             _id: user._id,
-            email: user.email
+            email: user.email,
+            userAvatar: process.env.API_BASE_URL + "" + user.userAvatar
           }
         })
       })

@@ -15,6 +15,7 @@ mongoose.connect(
     '@clusterblog.yhj2x6y.mongodb.net/?retryWrites=true&w=majority'
 )
 
+app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
 
@@ -40,7 +41,7 @@ app.use(morgan('tiny'))
 app.use('/blogs', BlogsRouter)
 app.use('/users', UsersRouter)
 
-app.use('', (req, res, next) => {
+app.use((req, res, next) => {
   const err = new Error('Not found')
   res.status(404)
   next(err)

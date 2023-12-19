@@ -8,7 +8,8 @@ const blogSchema = Schema({
   content: { type: String, required: true },
   category: { type: String, required: true },
   likes: { type: Number, default: 0},
-  author: { type:  Schema.Types.ObjectId, ref: "User", required: true}
+  author: { type:  Schema.Types.ObjectId, ref: "User", required: true},
+  blogImage: { type: String, require: true}
 })
 
 const blog = mongoose.model('Blog', blogSchema)
