@@ -15,7 +15,8 @@ exports.blogs_get_all = (req, res, next) => {
             category: blog.category,
             author: blog.author,
             likes: blog.likes,
-            blogImage: process.env.API_BASE_URL + "" + blog.blogImage
+            blogImage: blog.blogImage,
+            content: blog.content
           }
         })
       })
@@ -34,9 +35,8 @@ exports.blogs_create = (req, res, next) => {
     snippet: req.body.snippet,
     content: req.body.content,
     category: req.body.category,
-    likes: req.body.likes,
     author: req.userData.userId,
-    blogImage: process.env.API_BASE_URL + "" +req.file.path
+    blogImage: process.env.API_BASE_URL + "" + req.file.path
   })
 
   blog

@@ -10,7 +10,7 @@ dotenv.config()
 
 app.use(cors())
 
-axios.defaults.baseURL = process.env.API_BASE_URL;
+axios.defaults.baseURL = process.env.API_BASE_URL
 
 // Set view engine
 app.set('views', path.join(__dirname + '/views'))
@@ -20,16 +20,20 @@ app.set('view engine', 'ejs')
 app.use(express.static('./application/public'))
 
 app.get('/', (req, res, next) => {
-  axios.get('blogs')
-  .then(response => {
-    res.render('card', {count: response.data.count, blogs: response.data.blogs})
-  })
-  .catch(err => {
-    res.status(500).json({
-      message: err
+  axios
+    .get('blogs')
+    .then(response => {
+      res.render('card', {
+        count: response.data.count,
+        blogs: response.data.blogs,
+        blogIndex: Math.floor(Math.random() * 5)
+      })
     })
-  })
-
+    .catch(err => {
+      res.status(500).json({
+        message: err
+      })
+    })
 })
 
 module.exports = app

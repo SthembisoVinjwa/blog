@@ -177,7 +177,7 @@ nav a:hover::before {
 .heading{
     height: 120px;
     display: flex;
-}
+}    
 
 .corousel{
     width: 100%;
@@ -260,7 +260,6 @@ nav a:hover::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 100px;
 }
 .search-heading{
