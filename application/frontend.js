@@ -22,7 +22,7 @@ app.use(express.static('./application/public'))
 app.get('/', (req, res, next) => {
   axios.get('blogs')
   .then(response => {
-    res.render('index', {count: response.data.count, blogs: response.data.blogs})
+    res.render('card', {count: response.data.count, blogs: response.data.blogs})
   })
   .catch(err => {
     res.status(500).json({

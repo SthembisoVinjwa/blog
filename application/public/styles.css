@@ -173,14 +173,15 @@ nav a::before {
 nav a:hover::before {
     width: 100%;
 }
-.corousel{
-    width: 100%;
-    height:40vh;
-}
 
 .heading{
     height: 120px;
     display: flex;
+}
+
+.corousel{
+    width: 100%;
+    height:40vh;
 }
 
 #title{
@@ -227,24 +228,6 @@ nav a:hover::before {
     vertical-align: middle;
 } 
 
-.btn{
-    display: none;
-    /* display: flex; */
-    justify-content: space-between;
-    align-items: center;
-}
-
-.btn div{
-    height: 70px;
-    width: 100px;
-    display: relative;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    padding: 20px 0px;
-    margin-top: 10px;
-}
-
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -252,10 +235,11 @@ nav a:hover::before {
     width: auto;
     padding: 16px;
     color: black;
-    margin-top: -22px;
     font-weight: bold;
     transition: 0.6s ease;
     user-select: none;
+    font-size: 32px;
+    margin-top: -22px;
 }
 
 .next {
@@ -263,16 +247,15 @@ nav a:hover::before {
     border-radius: 3px 0 0 3px;
 }
 
-/*.prev:hover, .next:hover {
-    /* border-radius: 20px; */
-    /* background-color: rgba(0, 0, 0, 0.8); 
-}*/
+.prev:hover, .next:hover {
+    border-radius: 20px;
+    background-color: #40404015; 
+}
 
 /* search by category */
 
 .search{
-    margin-top: 100px;
-    border: 2px solid red;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -282,7 +265,6 @@ nav a:hover::before {
 }
 .search-heading{
     width: 100%;
-    border: 2px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,7 +274,6 @@ nav a:hover::before {
 }
 .categories{
     width: 100%;
-    border: 2px solid green;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -303,18 +284,16 @@ nav a:hover::before {
 .ctgs{
     width: 300px;
     height: 300px;
-    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    border-radius: 50% 0;
-    box-shadow: 5px 5px yellow;
+    border-radius: 2.5em;
 }
 .links{
     font-size: 32px;
-    transform: rotateZ(-45deg);
     text-decoration: none;
+    color: white;
 }
 @media (max-width:600px){
     .search{
@@ -323,7 +302,14 @@ nav a:hover::before {
 }
 #music{
     background-image: url(music.jpg);
+    filter: brightness(50%);
 }
+
+#music a {
+    color: white;
+    filter: brightness(100%) !important;
+}
+
 #forex{
     background-image: url(forex.jpg);
 }
