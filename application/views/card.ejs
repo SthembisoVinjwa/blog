@@ -45,7 +45,15 @@
                 <h5><%- blogs[0].author.name %>, Dec 7, 2017</h5>
                 <img class="blogimg" src="<%- blogs[blogIndex].blogImage %>" alt="<%- blogs[0].category %>">
                 <div class="blog-text">
-                    <p><%- blogs[blogIndex].content %></p>
+                    <p><%- blogs[blogIndex].content.replace("\n", "<br>" ).replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;" );
+                            %></p>
+                </div>
+                <div class="blog-actions">
+                    <a href="#">
+                        <div class="like-button">
+                            &#10084 Like
+                        </div>
+                    </a>
                 </div>
             </div>
             <%- include('./partials/footer.ejs') %>

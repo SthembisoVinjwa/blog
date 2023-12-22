@@ -329,11 +329,43 @@ input:nth-of-type(5):checked~main#carousel {
 }
 
 .blog-text {
-    width: 53.5em;
+    width: 45.5em;
     min-height: 80px;
     margin: 0 auto;
+    
+}
+
+.blog-actions {
+    margin: 0 auto;
+    width: 45.5em;
+    height: 45px;
     margin-bottom: 5em;
-    max-width: 100%;
+}
+
+.blog-actions a {
+    text-decoration: none;
+    color: #404040;
+}
+
+.like-button {
+    display: flex;
+    width: 100px;
+    height: 27px;
+    right: 0;
+    margin: auto auto;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: solid 0.15em #404040;
+    border-radius: 5px;
+}
+
+.like-button:hover {
+    border-color: #c5aa6a;
+}
+
+.blog-actions a:hover {
+    color: #c5aa6a;
 }
 
 /****************************/

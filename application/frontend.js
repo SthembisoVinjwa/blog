@@ -23,10 +23,14 @@ app.get('/', (req, res, next) => {
   axios
     .get('blogs')
     .then(response => {
+      const index = Math.floor(Math.random() * 5);
+
+      response.data.blogs[index].content = response.data.blogs[index].content.replaceAll('\n', '<br>')
+
       res.render('card', {
         count: response.data.count,
         blogs: response.data.blogs,
-        blogIndex: Math.floor(Math.random() * 5)
+        blogIndex: index
       })
     })
     .catch(err => {
