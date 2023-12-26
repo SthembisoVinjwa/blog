@@ -146,7 +146,7 @@ main#carousel {
     pointer-events: none;
 }
 
-div.item {
+.item {
     position: absolute;
     width: 300px;
     height: 400px;
@@ -157,31 +157,31 @@ div.item {
     z-index: calc((var(--position) - var(--abs)));
 }
 
-div.item:nth-of-type(1) {
+.item:nth-of-type(1) {
     --offset: 1;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-div.item:nth-of-type(2) {
+.item:nth-of-type(2) {
     --offset: 2;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-div.item:nth-of-type(3) {
+.item:nth-of-type(3) {
     --offset: 3;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-div.item:nth-of-type(4) {
+.item:nth-of-type(4) {
     --offset: 4;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-div.item:nth-of-type(5) {
+.item:nth-of-type(5) {
     --offset: 5;
     background-color: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -402,4 +402,9 @@ footer h2 {
 
 .privacy:hover {
     color: #c5aa6a;
+}
+
+.access-card {
+    text-decoration: none;
+    color: black;
 }

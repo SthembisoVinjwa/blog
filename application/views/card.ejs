@@ -9,7 +9,7 @@
             </div>
             <div class="box">
                 <input type="radio" name="position" />
-                <input type="radio" name="position" checked/>
+                <input type="radio" name="position" checked />
                 <input type="radio" name="position" />
                 <input type="radio" name="position" />
                 <input type="radio" name="position" />
@@ -28,8 +28,7 @@
                                     <%- blogs[i].snippet %>
                                 </p>
                                 <div class="user">
-                                    <img src="<%- blogs[i].author.userAvatar %>"
-                                        alt="user" />
+                                    <img src="<%- blogs[i].author.userAvatar %>" alt="user" />
                                     <div class="user-info">
                                         <h5><%- blogs[i].author.name %></h5>
                                         <!--<small>2h ago</small>-->
@@ -58,22 +57,41 @@
             </div>
             <%- include('./partials/footer.ejs') %>
 
-            <script>
-                var tag = document.getElementsByClassName("tag");
-                
-                for (let i = 0; i < tag.length; i++) {
-                    let category = tag[i].innerHTML;
-                    let sum  = 0
+                <script>
+                    var tag = document.getElementsByClassName("tag");
 
-                    for (let i = 0; i < category.length; i++) {
-                        sum += category[i].toLowerCase().charCodeAt(0)
+                    for (let i = 0; i < tag.length; i++) {
+                        let category = tag[i].innerHTML;
+                        let sum = 0
+
+                        for (let i = 0; i < category.length; i++) {
+                            sum += category[i].toLowerCase().charCodeAt(0)
+                        }
+
+                        sum = sum * 240 / 255
+
+                        tag[i].style.backgroundColor = "hsl(" + sum + ", 100%, 35%)"
                     }
 
-                    sum = sum * 240 / 255
+                    var position = 2
 
-                    tag[i].style.backgroundColor = "hsl(" + sum + ", 100%, 35%)"
-                }
-            </script>
+                    function changeCard() {
+                        var carousel = document.getElementById("carousel")
+                        var radio = document.getElementsByName("position")
+
+                        carousel.style.cssText = "--position: " + position
+                        radio[position-1].checked = true
+
+                        position++
+
+                        if (position == 6) {
+                            position = 1
+                        }
+                    }
+
+                    setInterval(changeCard, 2000)
+
+                </script>
     </body>
 
 </html>
