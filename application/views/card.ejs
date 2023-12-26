@@ -28,10 +28,10 @@
                                     <%- blogs[i].snippet %>
                                 </p>
                                 <div class="user">
-                                    <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo"
+                                    <img src="<%- blogs[i].author.userAvatar %>"
                                         alt="user" />
                                     <div class="user-info">
-                                        <h5>July Dec</h5>
+                                        <h5><%- blogs[i].author.name %></h5>
                                         <small>2h ago</small>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="card">
                 <h2><%- blogs[blogIndex].title %></h2>
-                <h5><%- blogs[0].author.name %>, Dec 7, 2017</h5>
+                <h5><%- blogs[blogIndex].author.name %>, Dec 7, 2017</h5>
                 <img class="blogimg" src="<%- blogs[blogIndex].blogImage %>" alt="<%- blogs[0].category %>">
                 <div class="blog-text">
                     <p><%- blogs[blogIndex].content.replace("\n", "<br>" ).replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;" );
@@ -57,6 +57,23 @@
                 </div>
             </div>
             <%- include('./partials/footer.ejs') %>
+
+            <script>
+                var tag = document.getElementsByClassName("tag");
+                
+                for (let i = 0; i < tag.length; i++) {
+                    let category = tag[i].innerHTML;
+                    let sum  = 0
+
+                    for (let i = 0; i < category.length; i++) {
+                        sum += category[i].toLowerCase().charCodeAt(0)
+                    }
+
+                    sum = sum * 240 / 255
+
+                    tag[i].style.backgroundColor = "hsl(" + sum + ", 100%, 35%)"
+                }
+            </script>
     </body>
 
 </html>

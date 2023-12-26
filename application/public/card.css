@@ -119,7 +119,7 @@ nav a:hover::before {
     display: flex;
     margin: 0;
     width: 100%;
-    height: 70px;
+    height: 110px;
 }
 
 .heading h2 {
@@ -250,7 +250,10 @@ input:nth-of-type(5):checked~main#carousel {
 }
 
 .card-body h4 {
-    margin: 10px;
+    margin: 10px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 35px;
 }
 
 .tag {
@@ -264,21 +267,12 @@ input:nth-of-type(5):checked~main#carousel {
     cursor: pointer;
 }
 
-.tag-teal {
-    background-color: #47bcd4;
-}
-
-.tag-purple {
-    background-color: #5e76bf;
-}
-
-.tag-pink {
-    background-color: #cd5b9f;
-}
-
 .card-body p {
-    font-size: 13px;
+    font-size: 12px;
     margin: 0 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 30px;
 }
 
 .user {
@@ -319,12 +313,12 @@ input:nth-of-type(5):checked~main#carousel {
 }
 
 .card h2 {
-    width: 300px;
+    width: 500px;
     margin: 0 auto;
 }
 
 .card h5 {
-    width: 300px;
+    width: 100px;
     margin: 0 auto;
 }
 
@@ -332,7 +326,7 @@ input:nth-of-type(5):checked~main#carousel {
     width: 45.5em;
     min-height: 80px;
     margin: 0 auto;
-    
+
 }
 
 .blog-actions {
@@ -349,20 +343,16 @@ input:nth-of-type(5):checked~main#carousel {
 
 .like-button {
     display: flex;
-    width: 100px;
+    width: 80px;
     height: 27px;
     right: 0;
     margin: auto auto;
     align-items: center;
     justify-content: center;
     background-color: white;
-    border: solid 0.15em #404040;
     border-radius: 5px;
 }
 
-.like-button:hover {
-    border-color: #c5aa6a;
-}
 
 .blog-actions a:hover {
     color: #c5aa6a;
@@ -377,23 +367,14 @@ footer {
     bottom: 0;
     width: 100%;
     margin: 0;
-    min-height: 100px;
+    min-height: 50px;
     padding: 15px 0;
     background-color: #404040;
     color: white;
 }
 
-#subscribe {
-    display: block;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    width: 35%;
-    margin-bottom: 0.6em;
-}
-
 footer h2 {
-    margin: 0 auto;
+    margin: auto auto;
     width: 30%;
     margin-bottom: 0.2em;
 }
@@ -402,30 +383,6 @@ footer h2 {
     align-items: center;
     justify-content: center;
     display: flex;
-}
-
-.email,
-.submit-btn {
-    display: inline;
-}
-
-.email {
-    width: 20em;
-    min-height: 2em;
-    background-color: white;
-    border: 1px solid white;
-    color: black;
-    border-radius: 0.3em;
-}
-
-.submit-btn {
-    min-height: 2.1em;
-    width: 7em;
-    border-radius: 0.3em;
-}
-
-.submit-btn:hover {
-    border-color: #c5aa6a;
 }
 
 .copyright {

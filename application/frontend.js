@@ -23,9 +23,16 @@ app.get('/', (req, res, next) => {
   axios
     .get('blogs')
     .then(response => {
-      const index = Math.floor(Math.random() * 5);
+      const index = Math.floor(Math.random() * 5)
 
-      response.data.blogs[index].content = response.data.blogs[index].content.replaceAll('\n', '<br>')
+      response.data.blogs[index].content = response.data.blogs[
+        index
+      ].content.replaceAll('\n', '<br>')
+
+      for (let i = 0; i < response.data.blogs.length; i++) {
+        response.data.blogs[i].author.userAvatar =
+        process.env.API_BASE_URL + '' + response.data.blogs[i].author.userAvatar
+      }
 
       res.render('card', {
         count: response.data.count,
