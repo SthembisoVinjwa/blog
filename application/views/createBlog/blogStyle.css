@@ -1,0 +1,152 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+/* body{
+    height: 100vh;
+} */
+header{
+    background-color: #404040;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100vw;
+}
+header h1{
+    font-size: 2.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #9d9a9a;
+}
+main{
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#head{
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 5px 5px yellow;
+}
+#form-container{
+    height: auto;
+    width: 500px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+#upload-field{
+    padding-left: 20px;
+}
+#form{
+    width: 100%;
+}
+label{
+    display: block;
+    font-size: 30px;
+    font-style: italic;
+}
+
+textarea{
+    width: 100%;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 5px;
+}
+#category{
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    
+    padding: 5px;
+    margin-top: 5px;
+
+}
+#upload::-webkit-file-upload-button{
+    height: 25px;
+    width: 100px;
+    border: 2px solid green;
+    border-radius: 50px;
+    font-size: 15px;
+}
+#upload{
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+span{
+    margin-top: 5px;
+
+}
+fieldset{
+    border: none;
+    margin: 10px 0px 20px 0px;
+    width: 100%;
+}
+
+#btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#submit-btn{
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+@media (max-width:600px) {
+    main{
+        height: auto;
+
+    }
+    #head{
+        font-size: 30px;
+    }
+    #form{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    fieldset{
+        width: 90%;
+        padding-left: 20px;
+    }
+    label{
+        font-size: 20px;
+    }
+    textarea{
+        width: 90%;
+        font-size: 15px;
+        padding: 5px;
+    }
+    #category{
+        width: 90%;
+        height: 30px;
+        font-size: 20px;
+    
+    }
+    #upload-field{
+        padding-left: 20px;
+    }
+    br{
+        display: block;
+        border: 2px solid white;
+    }
+    #btn{
+        width: 90%;
+    }
+    #form-container{
+        width: 100vw;
+    }
+    
+    
+}
+
