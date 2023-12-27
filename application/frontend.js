@@ -34,7 +34,7 @@ app.get('/', (req, res, next) => {
         process.env.API_BASE_URL + '' + response.data.blogs[i].author.userAvatar
       }
 
-      res.render('card', {
+      res.render('user/sign', {
         count: response.data.count,
         blogs: response.data.blogs,
         blogIndex: index
