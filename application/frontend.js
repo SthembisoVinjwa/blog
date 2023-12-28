@@ -10,23 +10,6 @@ dotenv.config()
 
 app.use(cors())
 
-// Handle CORS
-app.use((res, req, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-
-  res.header(
-    'Access-Control-Allow-Header',
-    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-  )
-
-  if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', 'PUT POST GET DELETE PATCH')
-    res.status(200).json({})
-  }
-
-  next()
-})
-
 axios.defaults.baseURL = process.env.API_BASE_URL
 
 // Set view engine
@@ -51,7 +34,7 @@ app.get('/', (req, res, next) => {
         process.env.API_BASE_URL + '' + response.data.blogs[i].author.userAvatar
       }
 
-      res.render('createBlog/blog', {
+      res.render('user/sign', {
         count: response.data.count,
         blogs: response.data.blogs,
         blogIndex: index
