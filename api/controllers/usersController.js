@@ -50,6 +50,7 @@ exports.users_signup = (req, res, next) => {
 }
 
 exports.users_signin = (req, res, next) => {
+  console.log(req.body)
   User.find({ email: req.body.email })
     .then(users => {
       const user = users[0]

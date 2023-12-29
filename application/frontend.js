@@ -21,6 +21,23 @@ axios.defaults.baseURL = process.env.API_BASE_URL;
 app.set('views', path.join(__dirname + '/views'))
 app.set('view engine', 'ejs')
 
+// Handle CORS
+app.use((res, req, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+
+  res.header(
+    'Access-Control-Allow-Header',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  )
+
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', 'PUT POST GET DELETE PATCH')
+    res.status(200).json({})
+  }
+
+  next()
+})
+
 // static files
 app.use(express.static('./application/public'))
 
@@ -28,7 +45,7 @@ app.use(express.static('./application/public'))
 app.get('/', (req, res, next) => {
   axios.get('blogs')
   .then(response => {
-    res.render('user/sign', {count: response.data.count, blogs: response.data.blogs})
+    res.render('card', {count: response.data.count, blogs: response.data.blogs})
   })
   .catch(err => {
     res.status(500).json({

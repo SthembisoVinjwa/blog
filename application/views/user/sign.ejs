@@ -18,45 +18,42 @@
                 </div>
                 <div class="box-2">
                     <div class="login-form-container">
-                        <div class="login-content">
-
-                            <fieldset>
-                                <label for="mail">
-
-                                    <input type="email" placeholder="Email" class="input-field" id="mail">
-                                </label>
-                            </fieldset>
-
-                            <fieldset>
-                                <label for="pass">
-                                    <input type="password" placeholder="Password" class="input-field" id="pass">
-                                </label>
-                            </fieldset>
-                        </div>
-                        <button class="login-button" type="button">Login</button>
-                    </div>
-                    <div class="signup-form-container">
-                        <form id="form" action="http://localhost:3000/users/signup" enctype="multipart/form-data"
-                            method="post">
-                            <div class="signin-content">
+                        <form id="form1" enctype="multipart/form-data" action="/" method="get"
+                            onsubmit="return login()">
+                            <div class="login-content">
 
                                 <fieldset>
-                                    <label for="name">
-                                        <input type="text" placeholder="Username" class="input-field" id="name">
-
+                                    <label for="mail">
+                                        <input type="email" placeholder="Email" class="input-field" id="smail">
                                     </label>
                                 </fieldset>
 
                                 <fieldset>
+                                    <label for="pass">
+                                        <input type="password" placeholder="Password" class="input-field" id="spass">
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <input class="login-button" type="submit" value="Login">
+                        </form>
+                    </div>
+                    <div class="signup-form-container">
+                        <form id="form2" enctype="multipart/form-data"
+                            onsubmit="event.preventDefault(); return signUp()">
+                            <div class="signin-content">
+                                <fieldset>
+                                    <label for="name">
+                                        <input type="text" placeholder="Username" class="input-field" id="name">
+                                    </label>
+                                </fieldset>
+                                <fieldset>
                                     <label for="mail">
-
                                         <input type="email" placeholder="Email" class="input-field" id="mail">
                                     </label>
                                 </fieldset>
                                 <fieldset>
                                     <label for="pass">
                                         <input type="password" placeholder="Password" class="input-field" id="pass">
-
                                     </label>
                                 </fieldset>
                                 <fieldset>
