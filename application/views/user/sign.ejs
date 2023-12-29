@@ -2,66 +2,76 @@
 <html lang="en">
 
 <%- include('../partials/head.ejs') %>
-<head>
-    <link rel="stylesheet" href="user-style.css">
-</head>
 
-<body>
-    <%- include('../partials/header.ejs') %>
-    <div class="container">
-        <div class="box-1">
-            <div class="content-holder">
-                <h2><i>Welcome!</i></h2>
-                <button class="sign" onclick="inOrUp()">Sign In</button>
-            </div>
-        </div>
-        <div class="box-2">
-            <div class="login-form-container">
-                <div class="login-content">
+    <head>
+        <link rel="stylesheet" href="user-style.css">
+    </head>
 
-                    <fieldset>
-                        <label for="mail">
-                            
-                            <input type="email" placeholder="Email" class="input-field" id="mail">
-                        </label>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <label for="pass">
-                            <input type="password" placeholder="Password" class="input-field" id="pass">
-                        </label>
-                    </fieldset>
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <div class="container">
+                <div class="box-1">
+                    <div class="content-holder">
+                        <h2><i>Welcome!</i></h2>
+                        <button class="sign" onclick="inOrUp()">Sign In</button>
+                    </div>
                 </div>
-                <button class="login-button" type="button">Login</button>
-            </div>
-            <div class="signup-form-container">
-                <div class="signin-content">
+                <div class="box-2">
+                    <div class="login-form-container">
+                        <div class="login-content">
 
-                    <fieldset>
-                        <label for="name">
-                            <input type="text" placeholder="Username" class="input-field" id="name">
-                            
-                        </label>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <label for="mail">
-                            
-                            <input type="email" placeholder="Email" class="input-field" id="mail">
-                        </label>
-                    </fieldset>
-                    <fieldset>
-                        <label for="pass">
-                            <input type="password" placeholder="Password" class="input-field" id="pass">
-                            
-                        </label>
-                    </fieldset>
+                            <fieldset>
+                                <label for="mail">
+
+                                    <input type="email" placeholder="Email" class="input-field" id="mail">
+                                </label>
+                            </fieldset>
+
+                            <fieldset>
+                                <label for="pass">
+                                    <input type="password" placeholder="Password" class="input-field" id="pass">
+                                </label>
+                            </fieldset>
+                        </div>
+                        <button class="login-button" type="button">Login</button>
+                    </div>
+                    <div class="signup-form-container">
+                        <form id="form" action="http://localhost:3000/users/signup" enctype="multipart/form-data"
+                            method="post">
+                            <div class="signin-content">
+
+                                <fieldset>
+                                    <label for="name">
+                                        <input type="text" placeholder="Username" class="input-field" id="name">
+
+                                    </label>
+                                </fieldset>
+
+                                <fieldset>
+                                    <label for="mail">
+
+                                        <input type="email" placeholder="Email" class="input-field" id="mail">
+                                    </label>
+                                </fieldset>
+                                <fieldset>
+                                    <label for="pass">
+                                        <input type="password" placeholder="Password" class="input-field" id="pass">
+
+                                    </label>
+                                </fieldset>
+                                <fieldset>
+                                    <label>
+                                        <h3 id="pic-title">Upload a profile picture: </h3>
+                                        <input type="file" class="input-field" id="pic">
+                                    </label>
+                                </fieldset>
+                            </div>
+
+                            <input class="signup-button" type="submit" value="Sign up">
+                        </form>
+                    </div>
                 </div>
-
-                <button class="signup-button" type="button">Sign Up</button>
-            </div>
-        </div>
-        <script src="user-script.js"></script>
-</body>
+                <script src="user-script.js"></script>
+    </body>
 
 </html>

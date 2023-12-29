@@ -1,11 +1,13 @@
-*, *::after, *::before{
+*,
+*::after,
+*::before {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
     font-size: 1em;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,30 +19,33 @@
     width: 700px;
     background-color: black;
 }
-.box-1{
+
+.box-1 {
     height: 100%;
     width: 300px;
-    
+
 }
-.content-holder{
+
+.content-holder {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column ;
+    flex-direction: column;
     padding-top: 50%;
     gap: 20px;
 }
 
-.sign{
+.sign {
     width: 130px;
     height: 40px;
     font-size: 20px;
     border-radius: 3px;
     background-color: white;
     color: black;
+    border: 1px solid black;
 }
 
-.box-2{
+.box-2 {
     width: 600px;
     height: 98%;
     display: flex;
@@ -49,69 +54,79 @@
     border-radius: 3px;
     margin: 3px 5px;
 }
+
 .content-holder h2 {
     margin-bottom: 10px;
     font-size: 32px;
     color: white;
 }
-.signup-form-container{
+
+.signup-form-container {
     display: none;
 }
+
 .login-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
-.login-heading h1, .signin-heading h1{
-    font-size: 30px;
+.login-heading h1,
+.signin-heading h1 {
+    font-size: 32px;
 }
 
-.login-button, .signup-button{
-    height: 50px;
+.login-button,
+.signup-button {
+    height: 40px;
     width: 300px;
-    border-radius: 20px;
+    border-radius: 3px;
     font-size: 20px;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-.login-content, .signin-content {
-    margin-top: 40px;
+.login-content {
+    margin-top: 20px;
 }
 
-fieldset{
+.signin-content {
+    margin-top: 20px;
+}
+
+fieldset {
     border: none;
     margin-bottom: 20px;
 }
-.signup-button{
+
+.signup-button {
     border: none;
     outline: none;
-    background-color: black; 
+    background-color: black;
     color: white;
 }
-.login-button{
+
+.login-button {
     outline: none;
     background-color: black;
     color: white;
     border: none;
 }
 
-input{
-    height: 50px;
+input {
+    height: 40px;
     width: 300px;
-    border-radius: 20px;
-    font-size: 20px;
+    border-radius: 3px;
+    font-size: 16px;
     padding: 10px;
     border: 1px solid rgb(168, 168, 168);
 }
 
 
-@media (max-width:700px){
+@media (max-width:700px) {
 
-    .container{
+    .container {
         padding: 0px;
         margin-top: 100px;
         flex-direction: column;
@@ -120,7 +135,8 @@ input{
         gap: 10px;
 
     }
-    .box-1{
+
+    .box-1 {
         width: auto;
         height: 150px;
         display: flex;
@@ -128,22 +144,41 @@ input{
         align-items: center;
         flex-direction: column;
         margin: 10px 0px;
-        margin-top:20px; 
+        margin-top: 20px;
     }
-    .content-holder h2{
+
+    .content-holder h2 {
         font-size: 40px;
         padding-top: 40px;
         padding-bottom: 5px;
     }
-    .box-2{
+
+    .box-2 {
         padding: 0px 20px;
         margin: 10px 0px 50px 0px;
         width: auto;
         height: auto;
 
     }
-    .signup-button, .login-button{
+
+    .signup-button,
+    .login-button {
         margin-bottom: 15px;
     }
 
+}
+
+#pic {
+    border: none;
+}
+
+#pic::-webkit-file-upload-button {
+    border: 1px solid black;
+    border-radius: 3px;
+
+}
+
+#pic-title {
+    font-size: 16px;
+    font-weight: 5;
 }
