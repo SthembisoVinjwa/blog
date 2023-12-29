@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
 main{
     height: 710px;
     width: 100%;
@@ -7,21 +14,34 @@ main{
 
 .heading {
     margin: 25px auto;
-    width: 250px;
+    width: 220px;
     height: 35px;
 }
 
 .blog-container {
-    display: ;
+    border-radius: 3px;
     height: 70px;
     margin: 25px 100px;
+    padding: 7px 0;
     background-color: blue;
+    display: flex;
+    justify-content: space-between;
 }
 
 .blog-image {
+    border-radius: 3px;
+    display: inline-block;
     height: 55px;
-    width: 55px;
-    margin-left: 20px;
-    margin-top: 10px;
+    width: 405px;
+    margin: 0 10px;
     background-color: red;
+}
+
+.actions {
+    border-radius: 3px;
+    display: inline-block;
+    height: 55px;
+    width: 205px;
+    margin: 0 10px;
+    background-color: brown;
 }
