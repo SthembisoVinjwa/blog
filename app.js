@@ -1,6 +1,7 @@
 const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const app = express()
 require('dotenv').config()
 
@@ -16,6 +17,7 @@ mongoose.connect(
 )
 
 app.use('/uploads', express.static('uploads'))
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
 

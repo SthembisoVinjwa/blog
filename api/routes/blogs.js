@@ -35,7 +35,7 @@ const upload = multer({
 })
 
 // Create a blog
-router.post('/', checkAuth, upload.single('blogImage'), BlogsController.blogs_create)
+router.post('/', upload.single('blogImage'), BlogsController.blogs_create)
 
 // Get all blogs
 router.get('/', BlogsController.blogs_get_all)
