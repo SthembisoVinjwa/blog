@@ -70,7 +70,7 @@
         if (login.innerText === "Login") {
             window.location.replace("/signup")
         } else if (login.innerText === "Log out") {
-            console.log(document.cookie = "access_token=")
+            document.cookie = "access_token="
             window.location.replace("/")
         }
     }

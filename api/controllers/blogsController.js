@@ -28,6 +28,18 @@ exports.blogs_get_all = (req, res, next) => {
     })
 }
 
+exports.blogs_for_user = (req, res, next) => {
+  Blog.find({ author: req.userData.userId })
+  .then(result => {
+    res.status(200).json(result)
+  })
+  .catch(err => {
+    res.status(500).json({
+      message: err
+    })
+  })
+}
+
 exports.blogs_create = (req, res, next) => {
   const blog = new Blog({
     _id: new mongoose.Types.ObjectId(),

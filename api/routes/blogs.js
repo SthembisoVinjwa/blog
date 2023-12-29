@@ -34,6 +34,9 @@ const upload = multer({
   fileFilter: fileFilter
 })
 
+// User blogs
+router.get('/user', checkAuth, BlogsController.blogs_for_user)
+
 // Create a blog
 router.post('/', checkAuth, upload.single('blogImage'), BlogsController.blogs_create)
 
