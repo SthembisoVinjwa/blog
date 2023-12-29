@@ -5,8 +5,73 @@
     </div>
     <nav id="nav">
         <a href="/">Home</a>
-        <a href="#">About</a>
         <a href="#">Topics</a>
-        <a href="/signup">MyBlogs</a>
+        <a href="#" onclick="event.preventDefault(); verifyCreate()">Create Blog</a>
+        <a href="#" id="login-tag" onclick="event.preventDefault(); inOut()">Login</a>
     </nav>
 </header>
+
+<script>
+    async function verifyUser() {
+        try {
+            token = document.cookie.split("=")[1]
+
+            if (token == undefined) {
+                throw error
+            }
+
+            // Url for the request
+            let url = 'http://localhost:3000/users/verify'
+
+            // Making our request
+            return await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'token': 'Bearer ' + token
+                },
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        return true
+                    } else {
+                        return false
+                    }
+                })
+                .catch(errorMsg => {
+                    return false
+                })
+        } catch (err) {
+            return false
+        }
+    }
+
+    var login = document.getElementById("login-tag")
+
+    verifyUser().then(result => {
+        if (result) {
+            login.innerText = "Log out"
+        } else {
+            login.innerText = "Login"
+        }
+    })
+
+    function verifyCreate() {
+        verifyUser().then(result => {
+            if (result === true) {
+                window.location.replace("/createBlog")
+            } else {
+                window.location.replace("/signup")
+            }
+        })
+    }
+
+    function inOut() {
+        if (login.innerText === "Login") {
+            window.location.replace("/signup")
+        } else if (login.innerText === "Log out") {
+            console.log(document.cookie = "access_token=")
+            window.location.replace("/")
+        }
+    }
+</script>

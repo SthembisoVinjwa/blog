@@ -31,3 +31,7 @@ function dropdown () {
     btnMenu.style.display = 'block'
   }
 }
+
+function verifyCreate() {
+  console.log(true)
+}

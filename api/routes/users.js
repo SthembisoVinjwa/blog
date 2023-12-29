@@ -35,6 +35,9 @@ const upload = multer({
   fileFilter: fileFilter
 })
 
+// Verify token
+router.get('/verify', checkAuth, UsersController.users_verify)
+
 // Sign up user
 router.post('/signup', upload.single('userAvatar'), UsersController.users_signup)
 

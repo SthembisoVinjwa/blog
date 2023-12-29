@@ -18,7 +18,7 @@ app.use(cors())
 axios.defaults.baseURL = process.env.API_BASE_URL;
 
 // Set view engine
-app.set('views', path.join(__dirname + '/views'))
+app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 
 // Handle CORS
@@ -39,7 +39,7 @@ app.use((res, req, next) => {
 })
 
 // static files
-app.use(express.static('./application/public'))
+app.use(express.static(path.join(__dirname, '/public')))
 
 // Home
 app.get('/', (req, res, next) => {
@@ -73,6 +73,11 @@ app.get('/', (req, res, next) => {
 app.get('/signup', (req, res, next) => {
   console.log(req.body)
   res.render('user/sign')
+})
+
+app.get('/createBlog', (req, res, next) => {
+  console.log(req.body)
+  res.render('createBlog/blog')
 })
 
 module.exports = app

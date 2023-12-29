@@ -35,16 +35,21 @@ function signUp () {
     body: formData
   })
     .then(result => {
-      console.log(result)
+      login(email, password)
     })
     .catch(errorMsg => {
-      console.log(errorMsg)
+      alert(errorMsg)
     })
 }
 
-function login () {
+function getCredentials() {
   const email = document.getElementById('smail').value
   const password = document.getElementById('spass').value
+  login(email, password)
+}
+
+function login (email, password) {
+  var status = 404
 
   // Url for the request
   let url = 'http://localhost:3000/users/signin'
@@ -60,12 +65,18 @@ function login () {
       password: password
     })
   })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-      document.cookie='access_token=' + data.token
+    .then(response => {
+      status = response.status
+      response.json().then(data => {
+        if (status === 200) {
+          document.cookie = 'access_token=' + data.token
+          window.location.replace('/')
+        } else {
+          alert(data.message)
+        }
+      })
     })
     .catch(errorMsg => {
-      console.log(errorMsg)
+      alert(data.message)
     })
 }

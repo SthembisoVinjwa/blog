@@ -29,8 +29,6 @@ exports.blogs_get_all = (req, res, next) => {
 }
 
 exports.blogs_create = (req, res, next) => {
-  console.log("YEs sir")
-
   const blog = new Blog({
     _id: new mongoose.Types.ObjectId(),
     title: req.body.title,

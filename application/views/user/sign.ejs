@@ -18,8 +18,8 @@
                 </div>
                 <div class="box-2">
                     <div class="login-form-container">
-                        <form id="form1" enctype="multipart/form-data" action="/" method="get"
-                            onsubmit="return login()">
+                        <form id="form1" enctype="multipart/form-data" method="get"
+                            onsubmit="event.preventDefault(); getCredentials()">
                             <div class="login-content">
 
                                 <fieldset>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="signup-form-container">
                         <form id="form2" enctype="multipart/form-data"
-                            onsubmit="event.preventDefault(); return signUp()">
+                            onsubmit="event.preventDefault(); signUp()">
                             <div class="signin-content">
                                 <fieldset>
                                     <label for="name">

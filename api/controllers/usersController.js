@@ -4,6 +4,12 @@ const User = require('../models/users')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
+exports.users_verify = (req, res, next) => {
+  return res.status(200).json({
+    message: 'verified'
+  })
+}
+
 exports.users_signup = (req, res, next) => {
   User.find({ email: req.body.email })
     .then(users => {

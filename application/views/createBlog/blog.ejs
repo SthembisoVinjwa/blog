@@ -12,7 +12,8 @@
 
             <main>
                 <div id="form-container">
-                    <form id="form" action="http://localhost:3000/blogs/" enctype="multipart/form-data" method="post">
+                    <form id="form" enctype="multipart/form-data" method="post"
+                        onsubmit="event.preventDefault(); postBlog()">
                         <fieldset>
                             <label for="" class="label-item">
                                 <span>Title:</span>
@@ -60,30 +61,38 @@
             <%- include('../partials/footer.ejs')%>
 
                 <script>
-                    function submitForm() {
-                        let title = document.getElementById("title").value
-                        let snippet = document.getElementById("snippet").value
-                        let category = document.getElementById("category").value
-                        let content = document.getElementById("content").value
-                        let blogImage = document.getElementById("blogImage").value
+                    function postBlog() {
+                        const title = document.getElementById("title").value
+                        const snippet = document.getElementById("snippet").value
+                        const category = document.getElementById("category").value
+                        const content = document.getElementById("content").value
+                        const blogImage = document.querySelector('#blogImage')
 
-                        // Url for the request 
-                        let url = 'http://localhost:3000/blogs/';
+                        const formData = new FormData()
+                        formData.append('blogImage', blogImage.files[0])
+                        formData.append('title', title)
+                        formData.append('snippet', snippet)
+                        formData.append('category', category)
+                        formData.append('content', content)
 
-                        // Making our request 
+                        // Url for the request
+                        let url = 'http://localhost:3000/blogs'
+
+                        token = document.cookie.split("=")[1]
+
+                        // Making our request
                         fetch(url, {
-                            method: 'POST', body: JSON.stringify({
-                                'title': title,
-                                'snippet': snippet,
-                                'category': category,
-                                'content': content,
-                                'blogImage': blogImage
-                            })
+                            method: 'POST',
+                            headers: { 'token': 'Bearer ' + token },
+                            body: formData
                         })
-                            .then(result => {
-                                console.log(result)
+                            .then(result => result.json().then(data => {
+                                alert(data.message)
+                                window.location.replace('/')
+                            }))
+                            .catch(errorMsg => {
+                                alert(errorMsg)
                             })
-                            .catch(errorMsg => { console.log(errorMsg); });
                     }
                 </script>
     </body>
