@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs')%>
+
+    <head>
+        <link rel="stylesheet" href="manage.css">
+    </head>
+
+    <body>
+        <%- include('../partials/header.ejs')%>
+            <main>
+                <h1 class="heading" >Manage blogs</h1>
+
+                <% for (let i=0; i < 5; i++) { %>
+                    <div class="blog-container">
+                        <div class="blog-image"></div>
+                        <div class="actions"></div>
+                    </div>
+                <% } %>    
+            </main>
+
+            <%- include('../partials/footer.ejs')%>
+    </body>
+
+
+</html>

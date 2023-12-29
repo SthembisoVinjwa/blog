@@ -80,4 +80,9 @@ app.get('/createBlog', (req, res, next) => {
   res.render('createBlog/blog')
 })
 
+app.get('/manageBlog', (req, res, next) => {
+  console.log(req.body)
+  res.render('createBlog/manageBlog')
+})
+
 module.exports = app
