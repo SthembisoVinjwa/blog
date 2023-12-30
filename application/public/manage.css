@@ -45,3 +45,11 @@ main{
     margin: 0 10px;
     background-color: brown;
 }
+
+.image {
+    border-radius: 3px;
+    display: inline-block;
+    height: 55px;
+    width: 55px;
+    background-color: yellow;
+}
