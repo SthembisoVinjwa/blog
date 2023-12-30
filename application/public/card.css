@@ -27,20 +27,28 @@ header {
 
 nav {
     display: inline;
+
 }
 
 /************Responsive nav*********/
 #menu {
     display: none;
 }
+#nav-pic{
+    height: 100%;
+    width: 100%;
+}
 
-@media(max-width: 710px) {
+@media(max-width: 872px) {
     #menu {
         display: block;
-        width: 15%;
+        /* width: 15%; */
+        /* width: 80px;
+        height: 40px; */
         border-radius: 15%;
         font-size: 20px;
         font-family: Arial;
+        margin-right: 40px;
     }
 
     .blog {
@@ -314,25 +322,43 @@ input:nth-of-type(5):checked~main#carousel {
 }
 
 .card h2 {
-    width: 500px;
+    /* width: 500px; */
+    max-width: 100%;
+    width: fit-content;
     margin: 0 auto;
+    font-family: 'Cursive';
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .card h5 {
-    width: 100px;
+    /* width: 500px; */
+    max-width: 100%;
+    width: fit-content;
     margin: 0 auto;
+    font-family: 'Cursive';
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
 .blog-text {
-    width: 45.5em;
+    /* width: 45.5em; */
+    max-width: 700px;
+    width: fit-content;
     min-height: 80px;
     margin: 0 auto;
+
 
 }
 
 .blog-actions {
     margin: 0 auto;
-    width: 45.5em;
+    /* width: 45.5em; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 45px;
     margin-bottom: 5em;
 }

@@ -1,7 +1,8 @@
 <header id="head">
     <div class="blog">
         <a href="#" class="logo">Blog</a>
-        <button id="menu" onclick="dropdown()">menu</button>
+        <!-- <button id="menu" onclick="dropdown()"><img src="../../public/nav_bar.png" id="nav-pic"></button> -->
+        <button id="menu" onclick="dropdown()"><i class="material-icons" id="nav-pic">&#xe5d2;</i></button>
     </div>
     <nav id="nav">
         <a href="/">Home</a>
@@ -12,6 +13,23 @@
 </header>
 
 <script>
+
+    function resetButton(){
+        const windowInnerWidth  = window.innerWidth;
+        if(windowInnerWidth > 872){
+            document.getElementById('nav').style.display = 'block'
+        }
+    }
+    setInterval(resetButton, 500)
+    function dropdown() {
+        let btnMenu = document.getElementById('nav')
+        if (btnMenu.style.display == 'block') {
+            btnMenu.style.display = 'none'
+        } else {
+            btnMenu.style.display = 'block'
+        }
+    }
+
     async function verifyUser() {
         try {
             token = document.cookie.split("=")[1]
