@@ -70,7 +70,7 @@ function login (email, password) {
       response.json().then(data => {
         if (status === 200) {
           document.cookie = 'access_token=' + data.token
-          window.location.replace('/')
+          window.location.assign('/')
         } else {
           alert(data.message)
         }

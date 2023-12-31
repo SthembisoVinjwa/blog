@@ -10,26 +10,46 @@
     <body>
         <%- include('../partials/header.ejs')%>
             <main>
-                <h1 class="heading" >Manage blogs</h1>
+                <h1 class="heading">Manage blogs</h1>
 
-                <% for (let i=0; i < 5; i++) { %>
+                <% for (let i=0; i < blogs.length; i++) { %>
                     <div class="blog-container">
                         <div class="blog-image">
-                            <div class="image">
-
-                            </div>
+                            <img src="<%- blogs[i].blogImage %>" class="image" alt="Blog image">
                             <div class="info">
-                                <h3>Blogging</h3>
-                                <p>This a blog about blogs</p>
+                                <h3>Title: <%- blogs[i].title %></h3>
+                                <p><%- blogs[i].snippet %></p>
                             </div>
                         </div>
                         <div class="actions">
-                            <button id="edit"><i class="fa-regular fa-pen-to-square fa-3x"></i></button>
                             <button id="delete"><i class="fa-regular fa-trash-can fa-3x"></i></button>
                         </div>
                     </div>
-                <% } %>    
+                    <% } %>
             </main>
+
+            <script>
+                let blogContainer = document.getElementsByClassName("blog-image")
+
+                for (let i = 0; i < blogContainer.length; i++) {
+                    function addShade() {
+                        blogContainer[i].style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
+                        blogContainer[i].style.cursor = "pointer"
+                    }
+
+                    function removeShade() {
+                        blogContainer[i].style.boxShadow = "";
+                    }
+
+                    blogContainer[i].addEventListener('click', function (event) {
+                        alert('Blog clicked')
+                    })
+
+                    blogContainer[i].addEventListener('mouseover', addShade)
+
+                    blogContainer[i].addEventListener('mouseout', removeShade)
+                }
+            </script>
 
             <%- include('../partials/footer.ejs')%>
     </body>

@@ -10,29 +10,29 @@ main{
     height: auto;
     width: 100%;
     display: flex;
-    border: 2px solid red;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    gap: 20px;
 }   
 
 .heading {
-    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+footer {
+    position: absolute;
 }
 
 .blog-container {
     margin: 0 auto;
-    border: 2px solid green;
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 3px;
     /* height: 100px; */
     /* margin: 25px 100px; */
     padding: 7px 0;
-    background-color: blue;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +46,6 @@ main{
     height: 100%;
     width: 405px;
     margin: 0 10px;
-    background-color: red;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -64,7 +63,6 @@ main{
     height: 55px;
     width: 205px;
     margin: 0 10px;
-    background-color: brown;
     /* margin-top: 150px; */
 }
 .actions button{
@@ -83,14 +81,14 @@ main{
     margin: 10px;
 }
 .info h3{
-    margin: 5px;
+    margin: 0px;
 }
 .image {
     border-radius: 3px;
     display: inline-block;
     height: 60px;
     width: 60px;
-    background-color: yellow;
+    object-fit: cover;
     margin: 10px;
 }
 /* i{
@@ -119,4 +117,9 @@ main{
         flex: 1;
         margin: 15px 5px;
     }
+}
+
+#edit, #delete {
+    background-color: white;
+    border: none;
 }
