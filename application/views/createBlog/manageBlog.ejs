@@ -30,6 +30,9 @@
 
             <script>
                 let blogContainer = document.getElementsByClassName("blog-image")
+                var blogs = '<%- JSON.stringify(blogs.map(blog => blog._id)) %>';
+                blogs = blogs.replace("[", "").replace("]", "").replaceAll('"', '')
+                blogs = blogs.split(",")
 
                 for (let i = 0; i < blogContainer.length; i++) {
                     function addShade() {
@@ -42,12 +45,33 @@
                     }
 
                     blogContainer[i].addEventListener('click', function (event) {
-                        alert('Blog clicked')
+                        window.location.assign('/viewBlog?blogId=' + blogs[i])
                     })
 
                     blogContainer[i].addEventListener('mouseover', addShade)
 
                     blogContainer[i].addEventListener('mouseout', removeShade)
+                }
+                
+                let trash = document.getElementsByClassName("fa-regular fa-trash-can fa-3x")
+
+                for (let i = 0; i < trash.length; i++) {
+                    function trashShade() {
+                        trash[i].style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
+                        trash[i].style.cursor = "pointer"
+                    }
+
+                    function removeTrashShade() {
+                        trash[i].style.boxShadow = "";
+                    }
+
+                    trash[i].addEventListener('click', function (event) {
+                        alert('delete')
+                    })
+
+                    trash[i].addEventListener('mouseover', trashShade)
+
+                    trash[i].addEventListener('mouseout', removeTrashShade)
                 }
             </script>
 
