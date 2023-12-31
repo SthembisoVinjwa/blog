@@ -26,6 +26,8 @@
                         </div>
                     </div>
                     <% } %>
+
+                        <button id="add"><i id="add-icon" class="fa-solid fa-plus"></i></button>
             </main>
 
             <script>
@@ -95,6 +97,26 @@
 
                     trash[i].addEventListener('mouseout', removeTrashShade)
                 }
+
+                let plus = document.getElementById("add")
+
+                function plusShade() {
+                    plus.style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
+                    plus.style.cursor = "pointer"
+                }
+
+                function removePlusShade() {
+                    plus.style.boxShadow = "";
+                }
+
+                plus.addEventListener('click', function (event) {
+                    window.location.assign("/createBlog")
+                })
+
+                plus.addEventListener('mouseover', plusShade)
+
+                plus.addEventListener('mouseout', removePlusShade)
+
             </script>
 
             <%- include('../partials/footer.ejs')%>
