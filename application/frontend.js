@@ -104,7 +104,6 @@ app.get('/viewBlog', (req, res, next) => {
   axios.get('blogs/' + blogId)
   .then(response => {
     const blog = response.data
-    console.log(blog)
     res.render('createBlog/viewBlog', {blog: blog})
   })
   .catch(error => {

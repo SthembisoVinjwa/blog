@@ -52,7 +52,7 @@
 
                     blogContainer[i].addEventListener('mouseout', removeShade)
                 }
-                
+
                 let trash = document.getElementsByClassName("fa-regular fa-trash-can fa-3x")
 
                 for (let i = 0; i < trash.length; i++) {
@@ -66,7 +66,29 @@
                     }
 
                     trash[i].addEventListener('click', function (event) {
-                        alert('delete')
+                        token = document.cookie.split("=")[1]
+
+                        if (token == undefined) {
+                            throw error
+                        }
+
+                        // Url for the request
+                        let url = 'http://localhost:3000/blogs/' + blogs[i]
+
+                        // Making our request
+                        fetch(url, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'token': 'Bearer ' + token
+                            },
+                        })
+                            .then(response => {
+                                window.location.reload()
+                            })
+                            .catch(errorMsg => {
+                                alert(errorMsg)
+                            })
                     })
 
                     trash[i].addEventListener('mouseover', trashShade)
