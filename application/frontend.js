@@ -21,6 +21,8 @@ axios.defaults.baseURL = process.env.API_BASE_URL;
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 
+let blogs = []
+
 // Handle CORS
 app.use((res, req, next) => {
   res.header('Access-Control-Allow-Origin', '*')
@@ -71,18 +73,29 @@ app.get('/', (req, res, next) => {
 })
 
 app.get('/signup', (req, res, next) => {
-  console.log(req.body)
   res.render('user/sign')
 })
 
 app.get('/createBlog', (req, res, next) => {
-  console.log(req.body)
   res.render('createBlog/blog')
 })
 
-app.get('/manageBlog', (req, res, next) => {
-  console.log(req.body)
-  res.render('createBlog/manageBlog')
+app.get('/manage', (req, res, next) => {
+  const options = {
+    headers: {
+      'Content-Type': 'application/json',
+      'token': req.query.token
+    }
+  }
+
+  axios.get('blogs/user', options)
+  .then(response => {
+    blogs = response.data
+    res.render('createBlog/manageBlog', {blogs: blogs})
+  })
+  .catch(error => {
+    res.status(302).redirect('/signup')
+  })
 })
 
 module.exports = app

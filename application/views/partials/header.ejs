@@ -6,7 +6,7 @@
     </div>
     <nav id="nav">
         <a href="/">Home</a>
-        <a href="/manageBlog">Manage Blogs</a>
+        <a href="#" onclick="event.preventDefault(); userBlogs()">Manage Blogs</a>
         <a href="#" onclick="event.preventDefault(); verifyCreate()">Create Blog</a>
         <a href="#" id="login-tag" onclick="event.preventDefault(); inOut()">Login</a>
     </nav>
@@ -77,9 +77,9 @@
     function verifyCreate() {
         verifyUser().then(result => {
             if (result === true) {
-                window.location.replace("/createBlog")
+                window.location.assign("/createBlog")
             } else {
-                window.location.replace("/signup")
+                window.location.assign("/signup")
             }
         })
     }
@@ -89,7 +89,24 @@
             window.location.replace("/signup")
         } else if (login.innerText === "Log out") {
             document.cookie = "access_token="
-            window.location.replace("/")
+            window.location.assign("/")
+        }
+    }
+
+    function userBlogs() {
+        try {
+            token = document.cookie.split("=")[1]
+
+            if (token == undefined) {
+                throw error
+            }
+
+            // Url for the request
+            let url = 'http://localhost:3001/manage'
+
+            window.location.assign(url + "?token=Bearer " + token)
+        } catch (err) {
+            alert(err)
         }
     }
 </script>
