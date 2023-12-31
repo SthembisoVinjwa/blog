@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs')%>
+
+    <head>
+        <link rel="stylesheet" href="card.css">
+    </head>
+
+    <body>
+        <%- include('../partials/header.ejs')%>
+            <main>
+                <div class="card">
+                    <h2 style="text-align: center;"><%- blog.title %></h2>
+                    <img class="blogimg" src="<%- blog.blogImage %>" alt="<%- blog.category %>">
+                    <div class="blog-text">
+                        <p><%- blog.content.replace("\n", "<br>" ).replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;" );
+                                %></p>
+                    </div>
+                </div>
+            </main>
+
+            <%- include('../partials/footer.ejs')%>
+    </body>
+
+
+</html>
