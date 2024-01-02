@@ -49,7 +49,7 @@ exports.blogs_create = (req, res, next) => {
     content: req.body.content,
     category: req.body.category,
     author: req.userData.userId,
-    blogImage: process.env.API_BASE_URL + "" + req.file.path
+    blogImage: "https://blogs-api-fcje.onrender.com/" + req.file.path
   })
 
   blog
