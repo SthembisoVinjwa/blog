@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 
 app.use(cors())
 
-axios.defaults.baseURL = process.env.API_BASE_URL;
+axios.defaults.baseURL = "https://blogs-api-fcje.onrender.com/";
 
 // Set view engine
 app.set('views', path.join(__dirname, '/views'))
