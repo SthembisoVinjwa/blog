@@ -16,7 +16,8 @@ exports.blogs_get_all = (req, res, next) => {
             author: blog.author,
             likes: blog.likes,
             blogImage: blog.blogImage,
-            content: blog.content
+            content: blog.content,
+            createdAt: blog.createdAt
           }
         })
       })

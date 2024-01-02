@@ -31,7 +31,7 @@
                                     <img src="<%- blogs[i].author.userAvatar %>" alt="user" />
                                     <div class="user-info">
                                         <h5><%- blogs[i].author.name %></h5>
-                                        <!--<small>2h ago</small>-->
+                                        <small><%- 1 + Math.round(i * 7 * Math.random()) %>h ago</small>
                                     </div>
                                 </div>
                             </div>
