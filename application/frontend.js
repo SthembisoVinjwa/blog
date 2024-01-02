@@ -54,7 +54,7 @@ app.get('/', (req, res, next) => {
 
       for (let i = 0; i < response.data.blogs.length; i++) {
         response.data.blogs[i].author.userAvatar =
-        process.env.API_BASE_URL + '' + response.data.blogs[i].author.userAvatar
+        "https://blogs-api-fcje.onrender.com/" + '' + response.data.blogs[i].author.userAvatar
       }
 
       res.render('card', {
