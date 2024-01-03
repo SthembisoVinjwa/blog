@@ -14,30 +14,31 @@
                 <input type="radio" name="position" />
                 <input type="radio" name="position" />
                 <main id="carousel">
-                    <% for (let i=0; i < 5; i++) {%>
-                        <div class="item">
-                            <div class="card-header">
-                                <img src="<%- blogs[i].blogImage %>" alt="rover" />
-                            </div>
-                            <div class="card-body">
-                                <span class="tag tag-teal"><%- blogs[i].category %></span>
-                                <h4>
-                                    <%- blogs[i].title %>
-                                </h4>
-                                <p>
-                                    <%- blogs[i].snippet %>
-                                </p>
-                                <div class="user">
-                                    <img src="<%- blogs[i].author.userAvatar %>" alt="user" />
-                                    <div class="user-info">
-                                        <h5><%- blogs[i].author.name %></h5>
-                                        <small><%- 1 + Math.round(i * 7 * Math.random()) %>h ago</small>
+                    <% var low=Math.round(Math.random() * (blogs.length/2))%>
+                        <% for (let i=low; i < low+5; i++) {%>
+                            <div class="item">
+                                <div class="card-header">
+                                    <img src="<%- blogs[i].blogImage %>" alt="rover" />
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag tag-teal"><%- blogs[i].category %></span>
+                                    <h4>
+                                        <%- blogs[i].title %>
+                                    </h4>
+                                    <p>
+                                        <%- blogs[i].snippet %>
+                                    </p>
+                                    <div class="user">
+                                        <img src="<%- blogs[i].author.userAvatar %>" alt="user" />
+                                        <div class="user-info">
+                                            <h5><%- blogs[i].author.name %></h5>
+                                            <small><%- 1 + Math.round(i * 7 * Math.random()) %>h ago</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <% } %>
-                            <main>
+                            <% } %>
+                                <main>
             </div>
             <div class="card">
                 <h2><%- blogs[blogIndex].title %></h2>
@@ -73,7 +74,7 @@
                         var radio = document.getElementsByName("position")
 
                         carousel.style.cssText = "--position: " + position
-                        radio[position-1].checked = true
+                        radio[position - 1].checked = true
 
                         position++
 

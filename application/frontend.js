@@ -15,7 +15,7 @@ app.use(bodyParser.json())
 
 app.use(cors())
 
-axios.defaults.baseURL = "http://localhost:3000/";
+axios.defaults.baseURL = "https://blogs-api-fcje.onrender.com/";
 
 // Set view engine
 app.set('views', path.join(__dirname, '/views'))
@@ -46,7 +46,7 @@ app.get('/', (req, res, next) => {
   axios
     .get('blogs')
     .then(response => {
-      const index = Math.floor(Math.random() * 5)
+      const index = Math.floor(Math.random() * response.data.blogs.length)
 
       response.data.blogs[index].content = response.data.blogs[
         index
@@ -54,7 +54,7 @@ app.get('/', (req, res, next) => {
 
       for (let i = 0; i < response.data.blogs.length; i++) {
         response.data.blogs[i].author.userAvatar =
-        "http://localhost:3000/" + '' + response.data.blogs[i].author.userAvatar
+        "https://blogs-api-fcje.onrender.com/" + '' + response.data.blogs[i].author.userAvatar
       }
 
       res.render('card', {
