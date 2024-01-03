@@ -46,7 +46,7 @@ app.get('/', (req, res, next) => {
   axios
     .get('blogs')
     .then(response => {
-      const index = Math.floor(Math.random() * response.data.blogs.length)
+      const index = Math.floor(Math.random() * 5)
 
       response.data.blogs[index].content = response.data.blogs[
         index
