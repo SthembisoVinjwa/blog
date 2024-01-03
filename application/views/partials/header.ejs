@@ -12,6 +12,22 @@
 </header>
 
 <script>
+    function resetButton() {
+        const windowInnerWidth = window.innerWidth;
+        if (windowInnerWidth > 872) {
+            document.getElementById('nav').style.display = 'block'
+        }
+    }
+    setInterval(resetButton, 500)
+    function dropdown() {
+        let btnMenu = document.getElementById('nav')
+        if (btnMenu.style.display == 'block') {
+            btnMenu.style.display = 'none'
+        } else {
+            btnMenu.style.display = 'block'
+        }
+    }
+    
     async function verifyUser() {
         try {
             token = document.cookie.split("=")[1]
