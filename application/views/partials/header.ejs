@@ -21,7 +21,7 @@
             }
 
             // Url for the request
-            let url = 'https://blogs-api-fcje.onrender.com/users/verify'
+            let url = 'http://localhost:3000/users/verify'
 
             // Making our request
             return await fetch(url, {
@@ -84,7 +84,7 @@
             }
 
             // Url for the request
-            let url = 'https://blogs-app-sgqp.onrender.com/manage'
+            let url = 'http://localhost:3001/manage'
 
             window.location.assign(url + "?token=Bearer " + token)
         } catch (err) {

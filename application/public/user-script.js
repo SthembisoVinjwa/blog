@@ -27,7 +27,7 @@ function signUp () {
   formData.append('email', email)
 
   // Url for the request
-  let url = 'https://blogs-api-fcje.onrender.com/signup'
+  let url = 'http://localhost:3000/users/signup'
 
   // Making our request
   fetch(url, {
@@ -52,7 +52,7 @@ function login (email, password) {
   var status = 404
 
   // Url for the request
-  let url = 'https://blogs-api-fcje.onrender.com/users/signin'
+  let url = 'http://localhost:3000/users/signin'
 
   // Making our request
   fetch(url, {
