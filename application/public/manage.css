@@ -22,7 +22,7 @@ main{
 }
 
 footer {
-    position: absolute;
+    position: relative;
 }
 
 .blog-container {
@@ -125,7 +125,7 @@ footer {
 }
 
 #add-icon {
-    font-size: 45px;
+    font-size: 40px;
 }
 
 #add {
@@ -133,4 +133,5 @@ footer {
     border-radius: 50%;
     width: 50px;
     margin: 0 auto;
+    margin-bottom: 20px;
 }

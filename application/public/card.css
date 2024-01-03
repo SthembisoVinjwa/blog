@@ -326,8 +326,6 @@ input:nth-of-type(5):checked~main#carousel {
     max-width: 100%;
     width: fit-content;
     margin: 0 auto;
-    font-family: 'Cursive';
-    font-weight: bold;
     font-size: 30px;
 }
 
@@ -336,8 +334,6 @@ input:nth-of-type(5):checked~main#carousel {
     max-width: 100%;
     width: fit-content;
     margin: 0 auto;
-    font-family: 'Cursive';
-    font-weight: bold;
     font-size: 20px;
     margin-top: 20px;
 }
@@ -348,8 +344,6 @@ input:nth-of-type(5):checked~main#carousel {
     width: fit-content;
     min-height: 80px;
     margin: 0 auto;
-
-
 }
 
 .blog-actions {
